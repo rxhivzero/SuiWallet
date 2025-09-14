@@ -1,0 +1,29 @@
+// App specific styles
+.app {
+    .app-main {
+        display: grid;
+        gap: 2rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (min-width: 1200px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .wallet-section,
+        .address-section {
+            @media (min-width: 768px) {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .testnet-section,
+        .transaction-section {
+            @media (min-width: 1200px) {
+                grid-column: 1 / -1;
+            }
+        }
+    }
+}
