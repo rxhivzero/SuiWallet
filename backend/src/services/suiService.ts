@@ -1,7 +1,12 @@
-import { SuiClient, getFullnodeUrl } from '@mysten/sui/client';
+import { SuiClient } from '@mysten/sui/client';
 
-const mainnetClient = new SuiClient({ url: getFullnodeUrl('mainnet') });
-const testnetClient = new SuiClient({ url: getFullnodeUrl('testnet') });
+// Get RPC URLs from environment variables with fallbacks
+const MAINNET_RPC_URL = process.env.SUI_MAINNET_RPC_URL || 'https://fullnode.mainnet.sui.io:443';
+const TESTNET_RPC_URL = process.env.SUI_TESTNET_RPC_URL || 'https://fullnode.testnet.sui.io:443';
+
+// Initialize clients
+const mainnetClient = new SuiClient({ url: MAINNET_RPC_URL });
+const testnetClient = new SuiClient({ url: TESTNET_RPC_URL });
 
 export interface WalletData {
 	address: string;
