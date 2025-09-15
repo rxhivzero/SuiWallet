@@ -35,7 +35,7 @@ const AddressInput: React.FC<AddressInputProps> = ({
             setLoading(true);
             setError(null);
 
-            const response = await axios.get(`http://localhost:3001/api/wallet/${inputAddress}`);
+            const response = await axios.get(`/api/wallet/${inputAddress}`);
             onAddressSubmit(response.data);
         } catch (err) {
             console.error('Error fetching wallet data:', err);

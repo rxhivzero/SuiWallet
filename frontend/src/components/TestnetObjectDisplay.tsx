@@ -16,7 +16,7 @@ const TestnetObjectDisplay: React.FC = () => {
             setLoading(true);
             setError(null);
 
-            const response = await axios.get('http://localhost:3001/api/testnet/object');
+            const response = await axios.get('/api/testnet/object');
             setObjectData(response.data);
         } catch (err) {
             console.error('Error fetching testnet object data:', err);
